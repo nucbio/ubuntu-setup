@@ -2,7 +2,7 @@
 
 set -e
 
-REPO_URL="https://github.com/nucbio/ubuntu-setup/archive/refs/heads/main.zip"
+REPO="https://github.com/nucbio/ubuntu-setup/archive/refs/heads/main.zip"
 INSTALL_DIR="$HOME/.ubuntu-setup"
 
 echo "Starting Ubuntu setup..."
@@ -19,7 +19,7 @@ if ! command -v wget > /dev/null 2>&1; then
 fi
 
 echo "Downloading repository with wget..."
-wget "$REPO_URL" -O /tmp/ubuntu-setup.zip
+wget "$REPO" -O /tmp/ubuntu-setup.zip
 
 unzip -q /tmp/ubuntu-setup.zip -d /tmp/
 mv /tmp/ubuntu_setup-main "$INSTALL_DIR"
