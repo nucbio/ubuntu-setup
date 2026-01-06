@@ -17,7 +17,7 @@
 
 if [[ "$INSTALL_OPT" != "Home" ]]; then
   sudo apt install -y mdadm
-if
+fi
 
 if [[ "$INSTALL_OPT" == "Home"]]; then
   sudo apt install -y gramps

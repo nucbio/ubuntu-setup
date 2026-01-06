@@ -1,5 +1,5 @@
 #!/bin/bash
-  sudo snap install alacritty --classic
+  
   sudo snap install gimp
   sudo snap install inkscape
   sudo snap install vlc
@@ -14,7 +14,7 @@ if [[ "$INSTALL_OPT" == "Home" ]]; then
   sudo snap install kigo # go game
   sudo snap install newsflash
   sudo snap install audacity
-if
+fi
 
 if [[ "$INSTALL_OPT" != "Bio-WS" ]]; then
   sudo snap install zoom-client
