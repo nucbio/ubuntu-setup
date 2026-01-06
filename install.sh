@@ -20,7 +20,7 @@ source ${UBUNTU_SETUP_DIR}/install/installers.sh
 source ${UBUNTU_SETUP_DIR}/install/install_apps.sh
 
 # Gnome settings
-source ${UBUNTU_SETUP_DIR}/settings/gnome_gsettings.sh
+source ${UBUNTU_SETUP_DIR}/install/settings.sh
 
 ###############################################################################
 # Revert to normal idle and lock settings
