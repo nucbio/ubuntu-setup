@@ -1,5 +1,7 @@
 #!/bin/bash
 printf "\n\n INSTALL Python3 libraries\n"
+sudo apt install -y python3-pip
+
 pip3 install --upgrade pip
 pip3 install numpy scipy matplotlib pandas
 pip3 install -U --user Sphinx

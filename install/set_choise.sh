@@ -1,9 +1,13 @@
 #!/bin/bash
 
-# Only ask for default desktop app choices when running Gnome
-if [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]]; then
-  OPTIONAL_APPS=("Zoom" "Dropbox")
-  DEFAULT_OPTIONAL_APPS='Zoom,Dropbox'
-  export FIRST_RUN_OPTIONAL_APPS=$(gum choose "${OPTIONAL_APPS[@]}" --no-limit --selected $DEFAULT_OPTIONAL_APPS --height 10 --header "Select optional apps" | tr ' ' '-')
-fi
+INSTALL_OPTS=("Home" "Work-WS" "Bio-WS")
+DEFAULT_INSTALL_OPT="Home"
 
+INSTALL_OPT=$(gum choose \
+  --height 14 \
+  --header "Select installation type" \
+  --selected "$DEFAULT_INSTALL_OPT" \
+  "${INSTALL_OPTS[@]}"
+)
+
+export INSTALL_OPT

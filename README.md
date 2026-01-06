@@ -1,4 +1,6 @@
-Highly personalized Ubuntu Gnome setup for Desktop PC
+Highly personalized Ubuntu Gnome setup for Desktop PC.
+
+Inspired by [Omakub](https://omakub.org/).
 
 # Install
 
