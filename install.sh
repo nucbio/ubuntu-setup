@@ -2,38 +2,27 @@
 
 set -e
 
-REPO="https://github.com/nucbio/ubuntu_setup/archive/refs/heads/main.zip"
-INSTALL_DIR="$HOME/.ubuntu-setup"
-
-echo "Starting Ubuntu setup..."
-
-# Remove existing directory if it exists
-if [ -d "$INSTALL_DIR" ]; then
-    echo "Removing existing installation..."
-    rm -rf "$INSTALL_DIR"
-fi
-
-if ! command -v wget > /dev/null 2>&1; then
-    echo "Error: wget is not available. Installing it now..."
-    sudo apt update && sudo apt install -y wget
-fi
-
-echo "Downloading repository with wget..."
-wget "$REPO" -O /tmp/ubuntu-setup.zip
-
-unzip -q /tmp/ubuntu-setup.zip -d /tmp/
-mv /tmp/ubuntu_setup-main "$INSTALL_DIR"
-rm /tmp/ubuntu-setup.zip
-
-cd "$INSTALL_DIR"
+trap 'echo "Ubuntu-setup failed! You can retry by running: source ~/.local/share/ubuntu-setup/install.sh"' ERR
 
 # Run installers in order
-bash packages/apt.sh
-#bash packages/snap.sh
-#bash packages/pip.sh
-#bash packages/optional.sh
 
-# Apply dotfiles
-#bash scripts/common.sh
+source ${UBUNTU_SETUP_DIR}/install/00_versions.sh
+source ${UBUNTU_SETUP_DIR}/apps/required/app_gum.sh >/dev/null
+source ${UBUNTU_SETUP_DIR}/install/set_choise.sh
+
+# Ensure computer doesn't go to sleep or lock while installing
+gsettings set org.gnome.desktop.screensaver lock-enabled false
+gsettings set org.gnome.desktop.session idle-delay 0
+echo "Installing terminal and desktop tools..."
+
+# Install installers 
+source ${UBUNTU_SETUP_DIR}/install/installers.sh
+
+# Install terminal tools
+source ${UBUNTU_SETUP_DIR}/install/install_apps.sh
+
+# Revert to normal idle and lock settings
+gsettings set org.gnome.desktop.screensaver lock-enabled true
+gsettings set org.gnome.desktop.session idle-delay 300
 
 echo "Setup complete. Please reboot."
