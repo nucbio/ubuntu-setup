@@ -19,13 +19,13 @@ if [[ "$INSTALL_OPT" != "Home" ]]; then
   sudo apt install -y mdadm
 fi
 
-if [[ "$INSTALL_OPT" == "Home"]]; then
+if [[ "$INSTALL_OPT" == "Home" ]]; then
   sudo apt install -y gramps
   sudo apt install -y calibre
   sudo apt install -y pychess
   sudo apt install -y anki
 fi
 
-if [[ "$INSTALL_OPT" != "Home"]]; then
+if [[ "$INSTALL_OPT" != "Home" ]]; then
   sudo apt install -y ncftp	## for GEO FTP Transfer
 fi
