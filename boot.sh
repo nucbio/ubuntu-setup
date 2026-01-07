@@ -6,6 +6,8 @@ echo "Ubuntu-setup is for fresh Ubuntu 24.04LTS Gnome Desktop installations only
 
 REPO="https://github.com/nucbio/ubuntu_setup/archive/refs/heads/main.zip"
 UBUNTU_SETUP_DIR="$HOME/.local/share/ubuntu-setup"
+# Protect path to the setup
+export UBUNTU_SETUP_DIR
 
 echo "Starting Ubuntu setup..."
 

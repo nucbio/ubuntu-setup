@@ -42,8 +42,8 @@ fi
 
 # Create startup directory and move files starting with "start"
 mkdir -p "$BASH_LOCAL_DIR/startup"
-if compgen -G "$BASH_LOCAL_DIR/start*" > /dev/null; then
-    mv "$BASH_LOCAL_DIR"/start* "$BASH_LOCAL_DIR/startup/"
+if compgen -G "$BASH_LOCAL_DIR/start_*.sh" > /dev/null; then
+    mv "$BASH_LOCAL_DIR"/start_*.sh "$BASH_LOCAL_DIR/startup/"
 fi
 
 # Backup existing .bashrc and move new one from .bashrc.d
