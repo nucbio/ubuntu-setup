@@ -4,7 +4,7 @@ set -e
 
 echo "Ubuntu-setup is for fresh Ubuntu 24.04LTS Gnome Desktop installations only!"
 
-REPO="https://github.com/nucbio/ubuntu_setup/archive/refs/heads/main.zip"
+REPO="https://github.com/nucbio/ubuntu-setup/archive/refs/heads/main.zip"
 UBUNTU_SETUP_DIR="$HOME/.local/share/ubuntu-setup"
 # Protect path to the setup
 export UBUNTU_SETUP_DIR
@@ -26,7 +26,7 @@ echo "Downloading repository with wget..."
 wget "$REPO" -O /tmp/ubuntu-setup.zip
 
 unzip -q /tmp/ubuntu-setup.zip -d /tmp/
-mv /tmp/ubuntu_setup-main "$UBUNTU_SETUP_DIR"
+mv /tmp/ubuntu-setup-main "$UBUNTU_SETUP_DIR"
 rm /tmp/ubuntu-setup.zip
 
 echo "Installation starting..."

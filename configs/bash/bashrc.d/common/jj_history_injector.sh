@@ -2,7 +2,7 @@
 ## Inject presets into command history
 jj() {
     # Default injection
-    local file="$HOME/bash_history_presets/top.txt"
+    local file="$HOME/bashrc.d/history_preset.txt"
     [[ -f "$file" ]] || touch "$file"
     # Help
     if [[ "$1" == "-h" ]]; then
