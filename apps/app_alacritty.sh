@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Make alacritty default terminal emulator
-sudo update-alternatives --set x-terminal-emulator /usr/bin/alacritty
+sudo apt install alacritty -y
 
 # Alacritty configuration
 mkdir -p ~/.local/share/alacritty/
