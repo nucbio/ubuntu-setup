@@ -13,7 +13,7 @@ parse_git_info() {
 prompt_dir_icon() {
   case "$PWD" in
     "$HOME")                                           echo "󰋜" ;;
-    "$OBSIDIAN_VAULT_DIR"*)                            echo "󰢚" ;;
+    "$OBSIDIAN_VAULT_DIR"*)                            echo "" ;;
     "$HOME/drafts"*)                                   echo "󱞁" ;;
     "$GITS_DIR"*)                                      echo "" ;;
     "$FAMILY_TREE_DIR"*)                               echo "󱘎" ;;
