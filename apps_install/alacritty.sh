@@ -108,7 +108,7 @@ cat > "$DESKTOP_FILE" <<EOF
 Type=Application
 TryExec=$BIN_PATH
 Exec=$BIN_PATH
-Icon=Alacritty
+Icon=alacritty
 Terminal=false
 Categories=System;TerminalEmulator;
 Name=Alacritty

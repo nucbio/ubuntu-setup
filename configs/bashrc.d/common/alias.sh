@@ -15,7 +15,7 @@ alias ll='eza -lah --group-directories-first --icons=auto'
 #alias lt='eza -a --tree --level=2 --long --icons --git'
 
 alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
-alias fd='fdfind'
+alias fd='~/.cargo/bin'
 
 alias lzg='lazygit'
 

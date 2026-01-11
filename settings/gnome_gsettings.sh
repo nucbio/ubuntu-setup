@@ -8,7 +8,7 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 37
 gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity -1.5
 
 gsettings set org.gnome.shell favorite-apps "[ \
-    'Alacritty.desktop', \
+    'alacritty.desktop', \
     'google-chrome.desktop', \
     'obsidian_obsidian.desktop', \
     'nemo.desktop', \
@@ -37,6 +37,7 @@ gsettings set org.gnome.desktop.input-sources xkb-options "['grp:alt_shift_toggl
 # Gedit settings
 gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 gsettings set org.gnome.gedit.preferences.editor scheme 'cobalt'
+gsettings set org.gnome.gedit.plugins active-plugins "['drawspaces']"
 # Make Gedit default Desktop app for text files (test - maybe make separete setup for default apps)
 xdg-mime default gedit.desktop text/plain
 
