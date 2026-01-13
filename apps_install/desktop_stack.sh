@@ -4,7 +4,7 @@
 
   sudo apt install -y openssh-server
   sudo apt install -y gedit-plugin-draw-spaces
-  sudo apt install -y pandoc pandoc-citeproc
+  sudo apt install -y pandoc
   sudo apt install -y nemo
   sudo apt install -y caffeine
   sudo apt install -y goldendict
