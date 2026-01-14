@@ -38,7 +38,6 @@ if [[ "$INSTALL_OPT" == "Home" ]]; then
   sudo snap install kigo # go game
   sudo snap install newsflash
   sudo snap install audacity
-
 fi
 
 if [[ "$INSTALL_OPT" != "Bio-WS" ]]; then
@@ -48,7 +47,6 @@ if [[ "$INSTALL_OPT" != "Bio-WS" ]]; then
   sudo snap install telegram-desktop
 fi
 
-if [[ "$INSTALL_OPT" == "Bio-WS" | "$INSTALL_OPT" == "Work-WS" ]]
+if [[ "$INSTALL_OPT" == "Bio-WS" || "$INSTALL_OPT" == "Work-WS" ]]; then
   sudo apt install -y mdadm
 fi
-
