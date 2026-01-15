@@ -6,6 +6,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 alias z='cd'
+alias c='clear'
 
 # n -> nvim
 #n() { if [ "$#" -eq 1 ]; then nvim; else nvim "$@"; fi; }
@@ -22,8 +23,10 @@ alias lzg='lazygit'
 # Git
 alias g='git'
 alias gcm='git commit -m'
-alias gcam='git commit -a -m'
+alias gcam='git add -A && git commit -m'
 alias gpom='git push -u origin main'
+alias glom='git pull origin main'
+alias grom='git pull --rebase origin main'
 # Compression
 tgz() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
 
