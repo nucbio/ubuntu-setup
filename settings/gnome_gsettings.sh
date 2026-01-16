@@ -38,6 +38,8 @@ gsettings set org.gnome.desktop.input-sources xkb-options "['grp:alt_shift_toggl
 gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 gsettings set org.gnome.gedit.preferences.editor scheme 'cobalt'
 gsettings set org.gnome.gedit.plugins active-plugins "['drawspaces']"
+gsettings set org.gnome.gedit.preferences.editor editor-font 'Monospace 16'
+gsettings set org.gnome.gedit.preferences.editor use-default-font false
 # Make Gedit default Desktop app for text files (test - maybe make separete setup for default apps)
 xdg-mime default gedit.desktop text/plain
 
@@ -58,6 +60,9 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature '3
 
 # minizize window on icon click
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize' 
+
+# increse system font size for 4K monitor
+gsettings set org.gnome.desktop.interface text-scaling-factor 1.2
 
 # inactivate screensaver (test if works)
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'

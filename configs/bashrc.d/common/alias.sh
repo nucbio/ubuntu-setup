@@ -5,7 +5,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-alias z='cd'
 alias c='clear'
 
 # n -> nvim

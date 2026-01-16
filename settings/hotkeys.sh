@@ -103,11 +103,5 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Sup
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['<Super><Shift><Alt>k']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['<Super><Shift><Alt>j']"
 
-gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "[ \
-    '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']"
-
-# Start a new Chrome window (rather than just switch to the already open one)
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name 'New Chrome Window'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command 'google-chrome --new-window'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding '<Shift><Alt>1'
-
+# Switch Layout en/de/ru
+gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Shift>Alt_L']"
