@@ -67,6 +67,7 @@ ln -sf "$RDIR/bin/R" "$LOCAL_BIN/R"
 ln -sf "$RDIR/bin/Rscript" "$LOCAL_BIN/Rscript"
 
 # Clean-up
+cd "$HOME"
 rm -rf "$RBUILD_DIR"
 rm "$RDIR/R-${R_VERSION}.tar.gz"
 unset RDIR RBUILD_DIR RSRC_DIR R_VERSION R_REPO LOCAL_BIN
