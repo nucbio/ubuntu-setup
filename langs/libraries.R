@@ -1,3 +1,5 @@
+setwd(Sys.getenv("HOME"))
+
 repos = list(CRAN="http://cran.rstudio.com/")
 
 ## BIOCONDUCTOR PACKAGES
