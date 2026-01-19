@@ -36,6 +36,15 @@ mkcd() {
     mkdir -p "$1" && cd "$1"
 }
 
+# copy full path to the file
+# usage: cpf my_file
+cpf() {
+  # Expand to absolute path and copy to clipboard
+  realpath "$1" | xclip -selection clipboard
+  # Optional: Print a confirmation to the terminal
+  echo "Copied: $(realpath "$1")"
+}
+
 # Copy current directory
 cpwd() {
     if command -v xclip >/dev/null 2>&1; then
