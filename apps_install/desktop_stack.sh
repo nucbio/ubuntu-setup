@@ -15,10 +15,12 @@
   sudo apt install -y ripgrep
   sudo apt install -y alacarte
   sudo apt install -y xclip
-
+  sudo apt install -y libreoffice
   sudo snap install gimp
   sudo snap install inkscape
   sudo snap install vlc
+  # Clipboard for Wayland for Nvim (test: cat logs.txt | wl-copy)
+  sudo apt install wl-clipboard
 
   sudo snap install code  --classic # Visual Studio Code
   sudo snap install cmake --classic
