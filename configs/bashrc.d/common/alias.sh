@@ -36,17 +36,24 @@ mkcd() {
     mkdir -p "$1" && cd "$1"
 }
 
-# Expand to absolute path and copy to clipboard
-# usage: cpf my_file
+# Copy path of file or directory to clipboard
+# usage: cpf my_dir    # copy directory path
+#        cpf my_file   # copy file path
+#        cpf           # copy current directory
 cpf() {
   local path
-  path=$(realpath "$1")
-  # Convert the path to base64 and wrap it in the OSC52 escape sequence
+  # If $1 is empty/unset, use PWD; otherwise, use realpath of the argument
+  if [ -z "$1" ]; then
+    path="$PWD"
+  else
+    path=$(realpath "$1")
+  fi
+  # Convert the path to base64 and wrap it in the OSC 52 escape sequence
   printf "\e]52;c;$(printf "%s" "$path" | base64 | tr -d '\n')\a"
   echo "Path copied to local clipboard: $path"
-}
+}  
 
-# Copy current directory
+# Copy current directory (functionality is replaced by cpf)
 cpwd() {
     if command -v xclip >/dev/null 2>&1; then
         dir="$(pwd)"
