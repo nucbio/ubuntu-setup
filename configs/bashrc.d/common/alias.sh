@@ -36,13 +36,14 @@ mkcd() {
     mkdir -p "$1" && cd "$1"
 }
 
-# copy full path to the file
+# Expand to absolute path and copy to clipboard
 # usage: cpf my_file
 cpf() {
-  # Expand to absolute path and copy to clipboard
-  realpath "$1" | xclip -selection clipboard
-  # Optional: Print a confirmation to the terminal
-  echo "Copied: $(realpath "$1")"
+  local path
+  path=$(realpath "$1")
+  # Convert the path to base64 and wrap it in the OSC52 escape sequence
+  printf "\e]52;c;$(printf "%s" "$path" | base64 | tr -d '\n')\a"
+  echo "Path copied to local clipboard: $path"
 }
 
 # Copy current directory
