@@ -40,6 +40,11 @@ if [[ "$INSTALL_OPT" == "Home" ]]; then
   sudo snap install kigo # go game
   sudo snap install newsflash
   sudo snap install audacity
+
+  # zmk - map keyboard
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  source $HOME/.local/bin/env
+  uv tool install zmk
 fi
 
 if [[ "$INSTALL_OPT" != "Bio-WS" ]]; then
