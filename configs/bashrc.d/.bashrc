@@ -56,12 +56,12 @@ if [[ -d "$HOME/.bashrc.d" ]]; then
 fi
 
 # fzf - fuzzy search - interactive features
-if [ -d "$HOME/.tools/fzf" ]; then
-  if [ -f "$HOME/.tools/fzf/shell/key-bindings.bash" ]; then
-    source "$HOME/.tools/fzf/shell/key-bindings.bash"
+if [ -d "$HOME/tools/fzf" ]; then
+  if [ -f "$HOME/tools/fzf/shell/key-bindings.bash" ]; then
+    source "$HOME/tools/fzf/shell/key-bindings.bash"
   fi
 
-  if [ -f "$HOME/.tools/fzf/shell/completion.bash" ]; then
-    source "$HOME/.tools/fzf/shell/completion.bash"
+  if [ -f "$HOME/tools/fzf/shell/completion.bash" ]; then
+    source "$HOME/tools/fzf/shell/completion.bash"
   fi
 fi

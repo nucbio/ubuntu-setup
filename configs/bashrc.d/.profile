@@ -19,6 +19,6 @@ if [ -d "$HOME/.cargo/bin" ] ; then
 fi
 
 # fzf - fuzzy search
-if [ -d "$HOME/.tools/fzf/bin" ]; then
-  export PATH="$HOME/.tools/fzf/bin:$PATH"
+if [ -d "$HOME/tools/fzf/bin" ]; then
+  export PATH="$HOME/tools/fzf/bin:$PATH"
 fi

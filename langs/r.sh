@@ -30,7 +30,7 @@ sudo apt install -y libssl-dev
 sudo apt install -y libxml2-dev
 
 ## R local install
-RDIR="$HOME/.tools/R/R-$R_VERSION"
+RDIR="$HOME/tools/R/R-$R_VERSION"
 RBUILD_DIR="$HOME/tmp/R-build"
 RSRC_DIR="$RDIR/src"
 LOCAL_BIN="$HOME/.local/bin"
