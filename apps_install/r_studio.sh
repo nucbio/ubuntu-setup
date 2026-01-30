@@ -27,7 +27,7 @@ if [[ "$INSTALL_OPT" == "Bio-WS" ]]; then
   if wget --spider --quiet "$RSTUDIO_SERVER_URL"; then
     mkdir -p ~/tmp && cd ~/tmp
     wget $RSTUDIO_SERVER_URL
-    $RSTUDIO_SERVER_DEB="${RSTUDIO_SERVER_URL##*/}"
+    RSTUDIO_SERVER_DEB="${RSTUDIO_SERVER_URL##*/}"
     sudo gdebi -n $RSTUDIO_SERVER_DEB
   else
     echo "Error: The RStuio server package URL is invalid or unreachable."
