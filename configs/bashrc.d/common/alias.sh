@@ -26,6 +26,13 @@ alias gcam='git add -A && git commit -m'
 alias gpom='git push -u origin main'
 alias glom='git pull origin main'
 alias grom='git pull --rebase origin main'
+
+# Claude Code
+alias cc='claude'
+alias ccp='claude –print'
+alias ccr='claude –resume'
+alias ccc='claude –continue'
+
 # Compression
 tgz() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
 
