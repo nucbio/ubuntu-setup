@@ -7,3 +7,10 @@ Inspired by [Omakub](https://omakub.org/).
 wget -qO- https://github.com/nucbio/ubuntu-setup/raw/main/boot.sh | bash
 ```
 
+
+# Clone
+Clone the repo to modify:
+```bash
+git clone git@github.com:nucbio/ubuntu-setup.git
+```
+
