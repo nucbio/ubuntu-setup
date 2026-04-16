@@ -17,3 +17,7 @@ pip3 install -U jupyter ipython
 # jupyter notebook --allow-root
 # in browser: localhost.8888/tree
 
+# Install uv package manager
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# GitHub Repository: astral-sh/uv
+# Documentation: docs.astral.sh/uv
