@@ -16,9 +16,6 @@ cp $HOME/.local/share/ubuntu-setup/configs/tmux/.tmux.conf $HOME/
 # Btop
 sudo snap install btop
 
-# Claude Code
-curl -fsSL https://claude.ai/install.sh | bash
-
 ## Install fzf - fuzzy search (https://github.com/junegunn/fzf)
 mkdir -p $HOME/tools
 
