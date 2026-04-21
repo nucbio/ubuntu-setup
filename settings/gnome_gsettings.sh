@@ -38,11 +38,14 @@ gsettings set org.gnome.desktop.input-sources xkb-options "['grp:alt_shift_toggl
 # Gedit settings
 gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 
-# Gedit color scheme (different in Ubuntu 26.04 LTS)
-gsettings set org.gnome.gedit.preferences.editor style-scheme-for-dark-theme-variant 'cobalt'
-gsettings set org.gnome.gedit.preferences.editor style-scheme-for-light-theme-variant 'cobalt'
-# gsettings set org.gnome.gedit.preferences.ui theme-variant 'system'
-# gsettings set org.gnome.gedit.preferences.editor scheme 'cobalt'
+# Gedit color scheme — keys differ between gedit versions
+# New split keys exist in gedit >= 48 (Ubuntu 26.04+); older gedit uses a single 'scheme' key
+if gsettings list-keys org.gnome.gedit.preferences.editor | grep -q '^style-scheme-for-dark-theme-variant$'; then
+    gsettings set org.gnome.gedit.preferences.editor style-scheme-for-dark-theme-variant 'cobalt'
+    gsettings set org.gnome.gedit.preferences.editor style-scheme-for-light-theme-variant 'cobalt'
+else
+    gsettings set org.gnome.gedit.preferences.editor scheme 'cobalt'
+fi
 
 gsettings set org.gnome.gedit.plugins active-plugins "['drawspaces']"
 gsettings set org.gnome.gedit.preferences.editor editor-font 'Monospace 16'

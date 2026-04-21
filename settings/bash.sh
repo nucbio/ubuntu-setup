@@ -16,7 +16,7 @@ mkdir -p "$BASH_LOCAL_DIR"
 cp "${BASH_SETUP_DIR}/common"/*.sh "$BASH_LOCAL_DIR/"
 
 # Copy additional files for local pcs
-if [[ "$INSTALL_OPT" == "Home" || "$INSTALL_OPT" == "Work" ]]; then
+if [[ "$INSTALL_OPT" == "Home" || "$INSTALL_OPT" == "Work-WS" ]]; then
   cp "${BASH_SETUP_DIR}/local"/*.sh "$BASH_LOCAL_DIR/"
 fi
 
