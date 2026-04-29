@@ -26,6 +26,7 @@ alias gcam='git add -A && git commit -m'
 alias gpom='git push -u origin main'
 alias glom='git pull origin main'
 alias grom='git pull --rebase origin main'
+alias gst='git status'
 
 # Claude Code
 alias cc='claude'
