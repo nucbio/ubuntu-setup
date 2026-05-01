@@ -54,6 +54,3 @@ if [[ "$INSTALL_OPT" != "Bio-WS" ]]; then
   sudo snap install telegram-desktop
 fi
 
-if [[ "$INSTALL_OPT" == "Bio-WS" || "$INSTALL_OPT" == "Work-WS" ]]; then
-  sudo apt install -y mdadm
-fi
