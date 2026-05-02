@@ -2,7 +2,7 @@
 
 ## eduVPN - TUD connection
 
-if [[ "$INSTALL_OPT" == "Home" || "INSTALL_OPT" == "Bio-WS" ]]; then
+if [[ "$INSTALL_OPT" == "Home" || "$INSTALL_OPT" == "Bio-WS" ]]; then
   sudo apt update -y
   sudo apt install -y apt-transport-https wget
   wget -O- https://app.eduvpn.org/linux/v4/deb/app+linux@eduvpn.org.asc | gpg --dearmor | sudo tee /usr/share/keyrings/eduvpn-v4.gpg >/dev/null

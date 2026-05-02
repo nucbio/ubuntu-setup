@@ -10,7 +10,8 @@ if [[ "$INSTALL_OPT" == "Bio-WS" || "$INSTALL_OPT" == "Work-WS" ]]; then
   ### mount array
   sudo mount /dev/md/0 /mnt/data1
   ### mount array permanently
-  echo '/dev/md/0 /mnt/data1	ext4	defaults	0	0' | sudo tee -a /etc/fstab
+  grep -q '/mnt/data1' /etc/fstab || \
+    echo '/dev/md/0 /mnt/data1 ext4 defaults,nofail 0 0' | sudo tee -a /etc/fstab
   echo "file:///mnt/data1 WS" | tee -a ~/.config/gtk-3.0/bookmarks
 fi
 
@@ -19,6 +20,7 @@ if [[ "$INSTALL_OPT" == "Bio-WS" ]]; then
   sudo mkdir /mnt/ssd_drive
   sudo chmod 775 /mnt/ssd_drive
   sudo mount /dev/sda /mnt/ssd_drive
-  echo '/dev/sda /mnt/ssd_drive	ext4	defaults	0	0' | sudo tee -a /etc/fstab
+  grep -q '/mnt/ssd_drive' /etc/fstab || \
+    echo '/dev/sda /mnt/ssd_drive ext4 defaults,nofail 0 0' | sudo tee -a /etc/fstab
   echo "file:///mnt/ssd_drive ssd_drive" | tee -a ~/.config/gtk-3.0/bookmarks
 fi

@@ -7,6 +7,8 @@ UBUNTU_SETUP_DIR=${UBUNTU_SETUP_DIR:-$HOME/.local/share/ubuntu-setup}
 # Ensure computer doesn't go to sleep or lock while installing
 gsettings set org.gnome.desktop.screensaver lock-enabled false
 gsettings set org.gnome.desktop.session idle-delay 0
+trap 'gsettings set org.gnome.desktop.screensaver lock-enabled true
+      gsettings set org.gnome.desktop.session idle-delay 600' EXIT
 ###############################################################################
 
 # GUI-like choice
