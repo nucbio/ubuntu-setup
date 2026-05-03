@@ -12,6 +12,7 @@
   sudo apt install -y pdfarranger
   sudo apt install -y 7zip
   sudo apt install -y gparted
+  sudo apt install -y exfatprogs     # extFAT support for gparted
   sudo apt install -y ripgrep
   sudo apt install -y alacarte
   sudo apt install -y xclip
@@ -19,6 +20,7 @@
   sudo snap install gimp
   sudo snap install inkscape
   sudo snap install vlc
+  sudo apt install -y ffmpeg     # video converter e.g. avi to mkv
   # Clipboard for Wayland for Nvim (test: cat logs.txt | wl-copy)
   sudo apt install wl-clipboard
 
@@ -38,7 +40,6 @@ if [[ "$INSTALL_OPT" == "Home" ]]; then
   
   sudo snap install gnome-chess
   sudo snap install kigo # go game
-  sudo snap install newsflash
   sudo snap install audacity
 
   # zmk - map keyboard
