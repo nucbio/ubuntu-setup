@@ -16,6 +16,13 @@ cp $HOME/.local/share/ubuntu-setup/configs/tmux/.tmux.conf $HOME/
 # Btop
 sudo snap install btop
 
+# CLI PDF-viewer
+sudo apt install zathura zathura-pdf-poppler -y
+# If does not work add repos:
+# sudo apt-add-repository universe
+# sudo apt-add-repository multiverse
+# sudo apt update
+
 ## Install fzf - fuzzy search (https://github.com/junegunn/fzf)
 mkdir -p $HOME/tools
 

@@ -18,6 +18,7 @@ alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 alias fd='~/.cargo/bin'
 
 alias lzg='lazygit'
+alias zat='zathura'
 
 # Git
 alias g='git'
