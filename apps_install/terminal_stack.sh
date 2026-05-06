@@ -18,9 +18,10 @@ sudo snap install yazi --classic
 cp $HOME/.local/share/ubuntu-setup/configs/yazi/yazi.toml $HOME/.config/yazi/yazi.toml
 
 sudo apt install kitty
-cp $HOME/.local/share/ubuntu-setup/configs/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
-#TODO copy icon to ~/.config/kitty/kitty-light.png
-#TODO Need to change: change Icon=kitty to Icon=/home/suvar/.config/kitty/kitty-light.png in/usr/share/applications/kitty.desktop
+mkdir -p "$HOME/.config/kitty"
+cp "$HOME/.local/share/ubuntu-setup/configs/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
+cp "$HOME/.local/share/ubuntu-setup/configs/kitty/kitty-light.png" "$HOME/.config/kitty/kitty-light.png"
+sudo sed -i "s|^Icon=.*|Icon=$HOME/.config/kitty/kitty-light.png|" /usr/share/applications/kitty.desktop
 
 # Btop
 sudo snap install btop

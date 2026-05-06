@@ -8,6 +8,7 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 37
 gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity -1.5
 
 gsettings set org.gnome.shell favorite-apps "[ \
+    'kitty.desktop', \
     'alacritty.desktop', \
     'google-chrome.desktop', \
     'obsidian_obsidian.desktop', \
