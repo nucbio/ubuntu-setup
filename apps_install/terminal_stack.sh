@@ -15,7 +15,8 @@ cp $HOME/.local/share/ubuntu-setup/configs/tmux/.tmux.conf $HOME/
 
 ## Yazi - Terminal File Manager
 sudo snap install yazi --classic
-cp $HOME/.local/share/ubuntu-setup/configs/yazi/yazi.toml $HOME/.config/yazi/yazi.toml
+mkdir -p "$HOME/.config/yazi"
+cp "$HOME/.local/share/ubuntu-setup/configs/yazi/yazi.toml" "$HOME/.config/yazi/yazi.toml"
 
 sudo apt install kitty
 mkdir -p "$HOME/.config/kitty"
