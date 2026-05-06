@@ -13,6 +13,15 @@ sudo snap install tmux  --classic
 # Tmux configuration
 cp $HOME/.local/share/ubuntu-setup/configs/tmux/.tmux.conf $HOME/
 
+## Yazi - Terminal File Manager
+sudo snap install yazi --classic
+cp $HOME/.local/share/ubuntu-setup/configs/yazi/yazi.toml $HOME/.config/yazi/yazi.toml
+
+sudo apt install kitty
+cp $HOME/.local/share/ubuntu-setup/configs/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
+#TODO copy icon to ~/.config/kitty/kitty-light.png
+#TODO Need to change: change Icon=kitty to Icon=/home/suvar/.config/kitty/kitty-light.png in/usr/share/applications/kitty.desktop
+
 # Btop
 sudo snap install btop
 
@@ -72,13 +81,4 @@ cargo install \
   --tag "$BAT_RELEASE_TAG" \
   --locked
 
-## Yazi - Blazing Fast Terminal File Manager
-# NOTE: some problems with yazi installation need to test
-# YAZI_RELEASE_TAG="${YAZI_RELEASE_TAG:-v26.1.4}"
-# cargo install --git https://github.com/sxyazi/yazi.git --force yazi-build
-# # Install ripgrep
-# cargo install \
-#   --git https://github.com/sxyazi/yazi.git yazi-cli\
-#   --tag "$YAZI_RELEASE_TAG" \
-#   --locked
-#
+

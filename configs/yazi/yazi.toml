@@ -1,0 +1,18 @@
+[preview]
+image_quality = 90
+
+[opener]
+edit = [
+  { run = 'nvim "$@"', block = true, desc = "nvim" },
+]
+pdf = [
+  { run = 'zathura "$@"', desc = "zathura" },
+]
+
+[open]
+prepend_rules = [
+  { mime = "application/pdf", use = "pdf" },
+]
+
+[mgr]
+linemode = "mtime"
