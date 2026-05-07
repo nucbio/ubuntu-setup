@@ -18,7 +18,7 @@ sudo snap install yazi --classic
 mkdir -p "$HOME/.config/yazi"
 cp "$HOME/.local/share/ubuntu-setup/configs/yazi/yazi.toml" "$HOME/.config/yazi/yazi.toml"
 
-sudo apt install kitty
+sudo apt install kitty -y
 mkdir -p "$HOME/.config/kitty"
 cp "$HOME/.local/share/ubuntu-setup/configs/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
 cp "$HOME/.local/share/ubuntu-setup/configs/kitty/kitty-light.png" "$HOME/.config/kitty/kitty-light.png"
