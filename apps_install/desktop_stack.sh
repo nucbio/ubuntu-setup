@@ -36,7 +36,7 @@ if [[ "$INSTALL_OPT" == "Home" ]]; then
   sudo apt install -y gramps
   sudo apt install -y calibre
   sudo apt install -y pychess
-  sudo apt install -y anki
+  sudo snap installl anki-desktop
   
   sudo snap install gnome-chess
   sudo snap install kigo # go game
