@@ -3,6 +3,9 @@
 # Claude Code
 curl -fsSL https://claude.ai/install.sh | bash
 
+# Open Code
+curl -fsSL https://opencode.ai/install | bash
+
 # Gemini
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 
