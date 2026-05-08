@@ -51,7 +51,12 @@ fi
 if [[ "$INSTALL_OPT" != "Bio-WS" ]]; then
   sudo snap install zoom-client
   sudo snap install zotero-snap
-  sudo snap install obsidian --classic
   sudo snap install telegram-desktop
+  # Snap obsidian is broken on Ubuntu 26.04 LTS -> use deb package
+  #sudo snap install obsidian --classic
+  #TODO check if fixed in 26.04.2
+  wget -O obsidian.deb https://github.com/obsidianmd/obsidian-releases/releases/download/v1.12.7/obsidian_1.12.7_amd64.deb
+  sudo apt install ./obsidian.deb -y
+  rm obsidian.deb
 fi
 

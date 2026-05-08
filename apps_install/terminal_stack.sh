@@ -27,6 +27,9 @@ sudo sed -i "s|^Icon=.*|Icon=$HOME/.config/kitty/kitty-light.png|" /usr/share/ap
 # Btop
 sudo snap install btop
 
+# Lazygit
+sudo apt install lazygit -y
+
 # CLI PDF-viewer
 sudo apt install zathura zathura-pdf-poppler -y
 # If does not work add repos:
