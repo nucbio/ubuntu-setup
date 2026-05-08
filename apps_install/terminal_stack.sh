@@ -37,7 +37,12 @@ sudo apt install zathura zathura-pdf-poppler -y
 ## Install fzf - fuzzy search (https://github.com/junegunn/fzf)
 mkdir -p $HOME/tools
 
-git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/tools/fzf
+if [ -d "$HOME/tools/fzf/.git" ]; then
+    git -C "$HOME/tools/fzf" pull
+else
+    git clone --depth 1 https://github.com/junegunn/fzf.git "$HOME/tools/fzf"
+fi
+
 "$HOME/tools/fzf/install" \
   --key-bindings \
   --completion \
