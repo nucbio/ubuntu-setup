@@ -10,6 +10,7 @@ printf "\n\nINSTALL R dependencies\n"
 sudo apt update
 
 ## Blood and pain: R v4.0.0+
+sudo apt install -y libuv1-dev
 sudo apt install -y libreadline-dev libncurses-dev
 sudo apt install -y build-essential
 sudo apt install -y gfortran
