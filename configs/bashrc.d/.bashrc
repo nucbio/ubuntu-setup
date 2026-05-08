@@ -65,3 +65,5 @@ if [ -d "$HOME/tools/fzf" ]; then
     source "$HOME/tools/fzf/shell/completion.bash"
   fi
 fi
+
+export PATH=$PATH:/home/suvar/.opencode/bin
