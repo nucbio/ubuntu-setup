@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo apt update -y
-sudo apt install -y ubuntu-restricted-extras
+#sudo apt install -y ubuntu-restricted-extras
 
 sudo apt install -y ffmpeg
 
