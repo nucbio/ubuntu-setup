@@ -24,12 +24,6 @@ if [[ "$INSTALL_OPT" == "Bio-WS" ]]; then
   cp -f "${BASH_SETUP_DIR}/ws"/*.sh "$BASH_LOCAL_DIR/"
 fi
 
-# Create startup directory and move files starting with "start"
-mkdir -p "$BASH_LOCAL_DIR/startup"
-if compgen -G "$BASH_LOCAL_DIR/start_*.sh" > /dev/null; then
-    mv "$BASH_LOCAL_DIR"/start_*.sh "$BASH_LOCAL_DIR/startup/"
-fi
-
 # Backup existing .bashrc and move new one from .bashrc.d
 if [ -f "$HOME/.bashrc" ]; then
     cp -f "$HOME/.bashrc" "$HOME/.bashrc.backup.$(date +%Y%m%d_%H%M%S)"
