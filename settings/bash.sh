@@ -15,11 +15,6 @@ if [[ "$INSTALL_OPT" == "Home" || "$INSTALL_OPT" == "Work-WS" ]]; then
 fi
 
 # Copy additional files for ws
-if [[ "$INSTALL_OPT" == "Home" ]]; then
-  cp -f "${BASH_SETUP_DIR}/home"/*.sh "$BASH_LOCAL_DIR/"
-fi
-
-# Copy additional files for ws
 if [[ "$INSTALL_OPT" == "Bio-WS" ]]; then
   cp -f "${BASH_SETUP_DIR}/ws"/*.sh "$BASH_LOCAL_DIR/"
 fi
