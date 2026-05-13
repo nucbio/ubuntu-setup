@@ -15,7 +15,7 @@
   sudo apt install -y exfatprogs     # extFAT support for gparted
   sudo apt install -y ripgrep
   sudo apt install -y alacarte
-  sudo apt install -y xclip
+  sudo apt install -y xclip  #TODO need to remove for Wayland Ubuntu
   sudo apt install -y libreoffice
   sudo snap install gimp
   sudo snap install inkscape
@@ -29,7 +29,7 @@
 
 if [[ "$INSTALL_OPT" != "Home" ]]; then
   sudo apt install -y mdadm
-  sudo apt install -y ncftp	## for GEO FTP Transfer
+  sudo apt install -y ncftp  ## for GEO FTP Transfer
 fi
 
 if [[ "$INSTALL_OPT" == "Home" ]]; then
@@ -55,7 +55,6 @@ if [[ "$INSTALL_OPT" != "Bio-WS" ]]; then
   wget -O zoom.deb https://zoom.us/client/latest/zoom_amd64.deb
   sudo apt install ./zoom.deb -y
   rm zoom.deb
-  
   sudo snap install zotero-snap
   sudo snap install telegram-desktop
   # Snap obsidian is broken on Ubuntu 26.04 LTS -> use deb package
