@@ -37,6 +37,9 @@ sudo apt install zathura zathura-pdf-poppler -y
 # sudo apt-add-repository multiverse
 # sudo apt update
 
+# CLI Image-viewer
+sudo apt install imv -y
+
 ## Install fzf - fuzzy search (https://github.com/junegunn/fzf)
 mkdir -p $HOME/tools
 

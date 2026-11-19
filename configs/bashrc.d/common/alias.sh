@@ -7,21 +7,35 @@ alias ....='cd ../../..'
 
 alias c='clear'
 
-# n -> nvim
-#n() { if [ "$#" -eq 1 ]; then nvim; else nvim "$@"; fi; }
+### File system ll -> eza
+alias ll='eza -lahg --group-directories-first --icons=auto'
 
-# File system
-alias ll='eza -lah --group-directories-first --icons=auto'
-#alias lt='eza -a --tree --level=2 --long --icons --git'
+# eza + adjusted tree output
+# ll with file tree where depth is adjusted to fit the current window
+lt() {
+    local max_lines=$(($(tput lines) - 2))
+    local output n_lines level optimal_level=1
+    
+    # Find the optimal level by testing from 4 down to 1
+    for level in 4 3 2 1; do
+        output="$(eza -ag --tree --level="$level" --long --icons --git "$@" 2>/dev/null)"
+        n_lines=$(printf "%s" "$output" | wc -l)
+        
+        if [ "$n_lines" -le "$max_lines" ]; then
+            optimal_level="$level"
+            break
+        fi
+    done
+    
+    # Run eza with the optimal level (preserves colors and icons)
+    eza -a --tree --level="$optimal_level" --long --icons --git "$@"
+}
 
-alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
-alias fd='~/.cargo/bin'
-
-alias lzg='lazygit'
-alias zat='zathura'
+alias zat='zathura'       # pdf viewer cli
+alias imv='imv-wayland'   # image viewer cli
 
 # Git
-alias g='git'
+alias lzg='lazygit'
 alias gcm='git commit -m'
 alias gcam='git add -A && git commit -m'
 alias gpom='git push -u origin main'
@@ -60,36 +74,5 @@ cpf() {
   # Convert the path to base64 and wrap it in the OSC 52 escape sequence
   printf "\e]52;c;$(printf "%s" "$path" | base64 | tr -d '\n')\a"
   echo "Path copied to local clipboard: $path"
-}  
-
-# Copy current directory (functionality is replaced by cpf)
-cpwd() {
-    if command -v xclip >/dev/null 2>&1; then
-        dir="$(pwd)"
-        echo "$dir" | xclip -selection clipboard
-        echo "Copied to clipboard: $dir"
-    else
-        echo "xclip is not installed. Install it with:"
-        echo "  sudo apt install xclip"
-    fi
 }
 
-# eza + adjusted tree output
-lt() {
-    local max_lines=$(($(tput lines) - 2))
-    local output n_lines level optimal_level=1
-    
-    # Find the optimal level by testing from 4 down to 1
-    for level in 4 3 2 1; do
-        output="$(eza -a --tree --level="$level" --long --icons --git "$@" 2>/dev/null)"
-        n_lines=$(printf "%s" "$output" | wc -l)
-        
-        if [ "$n_lines" -le "$max_lines" ]; then
-            optimal_level="$level"
-            break
-        fi
-    done
-    
-    # Run eza with the optimal level (preserves colors and icons)
-    eza -a --tree --level="$optimal_level" --long --icons --git "$@"
-}
