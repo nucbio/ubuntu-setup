@@ -1,6 +1,10 @@
 setwd(Sys.getenv("HOME"))
 
-repos = list(CRAN="http://cran.rstudio.com/")
+repos = list(CRAN="https://cran.rstudio.com/")
+
+## PAK (used to install packages from GitLab)
+if (!requireNamespace("pak", quietly = TRUE))
+    install.packages("pak", repos = repos)
 
 ## BIOCONDUCTOR PACKAGES
 if (!requireNamespace("BiocManager", quietly = TRUE))
@@ -36,7 +40,9 @@ install.packages(
    ), dependencies = TRUE, repos = repos)
    
 # Laboratory Packages
-# Install the packages from GitLab 
-devtools::install_gitlab("mglab/loci") 
-devtools::install_gitlab("mglab/seqtools") 
-devtools::install_gitlab("mglab/fiber")
+# Install the packages from GitLab
+pak::pak(c(
+  "gitlab::mglab/loci",
+  "gitlab::mglab/seqtools",
+  "gitlab::mglab/fiber"
+))
